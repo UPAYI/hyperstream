@@ -56,12 +56,12 @@ def payment(id):
         """Displays the QR and Payment Info."""
         return render_template('home.html', id=id, amount=None)
     else:
-        return render_template("create.html", id=id, amount=None)
+        return render_template("index.html", id=id, amount=None)
 
 
 @app.route('/')
 def homepage():
-    return render_template('create.html')
+    return render_template('index.html')
 
 
 @app.route('/<id>/<amount>')
@@ -74,7 +74,7 @@ def amount_payment(id, amount):
             amount = None
         return render_template('home.html', id=id, amount=amount)
     else:
-        return render_template("create.html", id=id, amount=amount)
+        return render_template("index.html", id=id, amount=amount)
 
 
 if __name__ == '__main__':
